@@ -25,10 +25,6 @@ RUN wget https://download2.rstudio.org/rstudio-server-rhel-1.1.463-x86_64.rpm \
   && yum -y install rstudio-server-rhel-1.1.463-x86_64.rpm \
   && rm -f rstudio-server-rhel-1.1.463-x86_64.rpm
 
-# CREATE RSTUDIO SERVER USER
-RUN useradd -d /home/rstudio -ms /bin/bash -p $(openssl passwd -1 -salt $(openssl rand -base64 6) rstudio) rstudio
-WORKDIR /home/rstudio
-
 # INSTALL PACKRAT
 RUN echo "options(repos=structure(c(CRAN='https://stat.ethz.ch/CRAN')))" >> .Rprofile \
   && echo ".libPaths('/usr/share/R/library')" >> .Rprofile \
