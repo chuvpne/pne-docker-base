@@ -1,5 +1,5 @@
-A base image with R, RStudio server and data analysis tools
-===========================================================
+A parent image with R, RStudio server and data analysis tools
+=============================================================
 
 An image based on rocker/rstudio.
 
